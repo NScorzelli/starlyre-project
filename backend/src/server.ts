@@ -1,5 +1,5 @@
 import express from 'express'
-import routes from './shared/routes/routes'
+import routes from './shared/http/routes/Routes'
 
 const port = 3000
 const app = express()
