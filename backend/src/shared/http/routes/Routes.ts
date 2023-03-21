@@ -1,15 +1,7 @@
-import UserStageOne from '../../../modules/models/services/UserStageOne'
-import UserStageTwo from '../../../modules/models/services/UserStageTwo'
-// import UserStageThree from '../../../modules/models/services/UserStageThree'
-import { type Request, type Response, Router } from 'express'
+import UserService from '../../../modules/services/UserService'
+import { Router } from 'express'
 const routes = Router()
 
-routes.get('/', (_: Request, res: Response) => {
-  return res.json({ message: 'Olá mundo!' })
-})
-
-routes.post('/stageone', UserStageOne.create)
-routes.post('/stagetwo', UserStageTwo.create)
-// routes.post('/stagethree', UserStageThree.create)
+routes.post('/signup', UserService.create)
 
 export default routes

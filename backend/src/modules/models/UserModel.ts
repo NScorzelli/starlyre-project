@@ -1,24 +1,14 @@
 import Sequelize from 'sequelize'
 import database from '../../shared/database/config'
-// import { noContent } from '../../shared/errors/helper/http-helper'
-
-export interface User {
-  user_id: string
-  email: string
-  password: string
-  passwordConfirmation: string
-  name: string
-  surname: string
-  phone: number
-  token_id: number
-}
+import { ok } from '../../../src/shared/errors/helper/http-helper'
+import bcrypt from 'bcrypt'
 
 class UserModel {
-  user: any
+  stageOneUser: any
 
   constructor () {
-    this.user = database.define('user', {
-      user_id: {
+    this.stageOneUser = database.define('users', {
+      id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true
@@ -28,10 +18,6 @@ class UserModel {
         allowNull: false
       },
       password: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      passwordConfirmation: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -46,40 +32,40 @@ class UserModel {
       phone: {
         type: Sequelize.STRING,
         allowNull: false
-      },
-      token_id: {
-        type: Sequelize.UUID,
-        allowNull: false
       }
     })
-    this.user.sync({ force: false })
+    this.stageOneUser.sync({ force: false })
   }
 
-  async findOne (email: string): Promise<User> {
-    const user = await this.user.findOne({
+  async create (email: string, password: string, name: string, surname: string, phone: string): Promise<Response> {
+    const hash = await bcrypt.hash(password, 10)
+    await this.stageOneUser.create({
+      email,
+      password: hash,
+      name,
+      surname,
+      phone
+    }
+
+    )
+    return ok({ message: 'User created' })
+  }
+
+  async findOne (email: string): Promise<Response> {
+    const user = await this.stageOneUser.findOne({
       where: { email },
-      attributes: ['user_id', 'email', 'password', 'passwordConfirmation', 'name', 'surname', 'phone', 'token_id']
+      attributes: ['id', 'email', 'password']
     })
     return user
   }
 
-  //   async create (comment: string, idPost: number): Promise<void> {
-  //     await this.comments.create({ text: comment, idPost })
-  //   }
-
-  //   async getCommentById (id: string): Promise<Comment> {
-  //     const comment = await this.comments.findOne({
-  //       where: { id },
-  //       attributes: ['id', 'text', 'idPost']
-  //     })
-  //     return comment
-  //   }
-
-  //   async deleteComment (id: string): Promise<number> {
-  //     await this.comments.destroy({ where: { id } })
-
-//     return noContent()
-//   }
+  async findById (id: string): Promise<Response> {
+    const user = await this.stageOneUser.findOne({
+      where: { id },
+      attributes: ['id', 'email', 'password']
+    })
+    return user
+  }
 }
 
 export default new UserModel()
