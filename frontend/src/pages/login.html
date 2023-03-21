@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/frontend/src/styles/style_login.css">
+  <title>Página de login</title>
+</head>
+<body>
+
+  <header>
+    <div class="menu">
+      <button class="return">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_76_347" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+          <rect width="30" height="30" fill="#D9D9D9"/>
+          </mask>
+          <g mask="url(#mask0_76_347)">
+          <path d="M20.3125 27.8125L7.46872 14.9688L20.3125 2.125L22.625 4.4375L12.0625 14.9688L22.625 25.5L20.3125 27.8125Z" fill="#212121"/>
+          </g>
+          </svg>          
+      </button>
+      <p class="title">Início</p>
+      <div class="switch-mode">
+        <button id="dark-mode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_76_352" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+            <rect width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_76_352)">
+            <mask id="mask1_76_352" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+            <rect width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask1_76_352)">
+            <mask id="mask2_76_352" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+            <rect width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask2_76_352)">
+            <path d="M12 21C9.5 21 7.375 20.125 5.625 18.375C3.875 16.625 3 14.5 3 12C3 9.5 3.875 7.375 5.625 5.625C7.375 3.875 9.5 3 12 3C12.2333 3 12.4627 3.00833 12.688 3.025C12.9127 3.04167 13.1333 3.06667 13.35 3.1C12.6667 3.58333 12.121 4.21233 11.713 4.987C11.3043 5.76233 11.1 6.6 11.1 7.5C11.1 9 11.625 10.275 12.675 11.325C13.725 12.375 15 12.9 16.5 12.9C17.4167 12.9 18.2583 12.6957 19.025 12.287C19.7917 11.879 20.4167 11.3333 20.9 10.65C20.9333 10.8667 20.9583 11.0873 20.975 11.312C20.9917 11.5373 21 11.7667 21 12C21 14.5 20.125 16.625 18.375 18.375C16.625 20.125 14.5 21 12 21ZM12 19C13.4667 19 14.7833 18.596 15.95 17.788C17.1167 16.9793 17.9667 15.925 18.5 14.625C18.1667 14.7083 17.8333 14.775 17.5 14.825C17.1667 14.875 16.8333 14.9 16.5 14.9C14.45 14.9 12.704 14.1793 11.262 12.738C9.82067 11.296 9.1 9.55 9.1 7.5C9.1 7.16667 9.125 6.83333 9.175 6.5C9.225 6.16667 9.29167 5.83333 9.375 5.5C8.075 6.03333 7.021 6.88333 6.213 8.05C5.40433 9.21667 5 10.5333 5 12C5 13.9333 5.68333 15.5833 7.05 16.95C8.41667 18.3167 10.0667 19 12 19Z" fill="#212121"/>
+            </g>
+            </g>
+            </g>
+            </svg>
+        </button>
+        <button id="light-mode">
+
+        </button>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="/frontend/src/assets/imgs/Starlyre_logo2-1.png" alt="logo Starlyre">
+    </div>
+  </header>
+
+  <div class="app">
+  
+    <main>
+      <h2 class="welcome-msg">Bem-vindo!</h2>
+      <form>
+        
+        <fieldset>
+  
+          <div class="login-area">
+  
+            <div class="data-inputs">
+  
+              <div class="input-wrapper">
+                <label for="email-login">E-mail</label>
+                <input type="email" id="email-login" placeholder="digiteseuemailaqui@email.com">
+              </div>
+  
+              <div class="input-wrapper">
+                <label for="password-login">Senha</label>
+                <input type="password" id="password-login" placeholder="********">
+              </div>
+  
+            </div>
+  
+            <a href="#" class="forgot-password">
+              Esqueceu a senha?
+            </a>
+  
+            <div class="login-buttons">
+  
+              <div class="submit-button">
+                <button class="enter-button">Entrar</button>
+              </div>
+  
+              <div class="divider">
+                <div class="dvd-line"></div>
+                <span>ou</span>
+                <div class="dvd-line"></div>
+              </div>
+  
+              <div class="google-or-facebook-login">
+  
+                <div class="google-button">
+                  <button class="gg-login-button">
+                    <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d_76_535)">
+                      <path d="M13.7541 12.5461V16.8333H20.988C20.6941 18.6741 18.8009 22.2239 13.7541 22.2239C9.39976 22.2239 5.84755 18.6936 5.84755 14.3333C5.84755 9.9729 9.40474 6.44263 13.7541 6.44263C16.2302 6.44263 17.8892 7.4729 18.8408 8.36645L22.2983 5.09985C20.0763 3.0686 17.1967 1.83325 13.7541 1.83325C6.70446 1.83325 1 7.42407 1 14.3333C1 21.2424 6.70446 26.8333 13.7541 26.8333C21.1176 26.8333 26 21.76 26 14.6165C26 13.7961 25.9103 13.1663 25.8007 12.5461H13.7541Z" fill="#896e91"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_d_76_535" x="0" y="0.833252" width="27" height="27" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_76_535"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_76_535" result="shape"/>
+                      </filter>
+                      </defs>
+                      </svg>                    
+                  </button>
+                </div>
+  
+                <div class="facebook-button">
+                  <button class="fk-login-button">
+                    <svg width="17" height="28" viewBox="0 0 17 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d_76_537)">
+                      <path d="M10.745 26.8333V15.4443H15.1851L15.8503 10.9864H10.745V8.14724C10.745 6.85937 11.1574 5.98218 13.294 5.98218H16V2.00581C15.529 1.95174 13.9133 1.83325 12.0355 1.83325C8.11086 1.83325 5.4235 3.90398 5.4235 7.70836V10.987H1V15.4443H5.4235V26.8333H10.745Z" fill="#896e91"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_d_76_537" x="0" y="0.833252" width="17" height="27" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_76_537"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_76_537" result="shape"/>
+                      </filter>
+                      </defs>
+                      </svg>
+                  </button>
+                </div>
+  
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </fieldset>
+  
+      </form>
+  
+      <div class="register-area">
+        <p >Não tem login? <a href="#">Inscreva-se!</a></p>
+      </div>
+    </main>
+  </div:app>
+</body>
+</html>
