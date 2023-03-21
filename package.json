@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev": "echo 'Você está na raiz do projeto! Por favor, entre em uma pasta que contenha o projeto.' && exit 1",
+    "start": "echo 'Você está na raiz do projeto! Por favor, entre em uma pasta que contenha o projeto.' && exit 1"
+  } 
+}
