@@ -4,10 +4,10 @@ import { ok } from '../../../src/shared/errors/helper/http-helper'
 import bcrypt from 'bcrypt'
 
 class UserModel {
-  stageOneUser: any
+  User: any
 
   constructor () {
-    this.stageOneUser = database.define('users', {
+    this.User = database.define('users', {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -34,12 +34,12 @@ class UserModel {
         allowNull: false
       }
     })
-    this.stageOneUser.sync({ force: false })
+    this.User.sync({ force: false })
   }
 
   async create (email: string, password: string, name: string, surname: string, phone: string): Promise<Response> {
     const hash = await bcrypt.hash(password, 10)
-    await this.stageOneUser.create({
+    await this.User.create({
       email,
       password: hash,
       name,
@@ -52,7 +52,7 @@ class UserModel {
   }
 
   async findOne (email: string): Promise<Response> {
-    const user = await this.stageOneUser.findOne({
+    const user = await this.User.findOne({
       where: { email },
       attributes: ['id', 'email', 'password']
     })
@@ -60,7 +60,7 @@ class UserModel {
   }
 
   async findById (id: string): Promise<Response> {
-    const user = await this.stageOneUser.findOne({
+    const user = await this.User.findOne({
       where: { id },
       attributes: ['id', 'email', 'password']
     })

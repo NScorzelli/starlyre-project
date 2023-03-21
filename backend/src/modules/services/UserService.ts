@@ -11,7 +11,7 @@ export interface UserProps {
   phone: string
 }
 
-export class StageOneService {
+export class UserService {
   async create (req: Request, res: Response): Promise<Response> {
     const { email, password, name, surname, phone } = req.body as UserProps
 
@@ -39,4 +39,4 @@ export class StageOneService {
   }
 }
 
-export default new StageOneService()
+export default new UserService()
